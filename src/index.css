@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #080A0F;
+    color: #F1F5F9;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smooth hardware-accelerated scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.35);
+}
+
+@keyframes orbi-rim-spin {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.orbi-rim-active {
+  background: linear-gradient(
+    90deg,
+    #ff5e3a,
+    #f5a623,
+    #00d2ff,
+    #7b61ff,
+    #ff5e3a
+  );
+  background-size: 300% 300%;
+  animation: orbi-rim-spin 4s ease infinite;
+}
+
+@keyframes orbi-eq-bar {
+  0%, 100% {
+    transform: scaleY(0.32);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.orbi-eq-bar {
+  transform-origin: bottom center;
+  animation: orbi-eq-bar 0.75s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbi-rim-active,
+  .orbi-eq-bar {
+    animation: none;
+  }
+}

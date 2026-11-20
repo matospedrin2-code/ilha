@@ -1,0 +1,6 @@
+{
+  "name": "Orbi Dynamic",
+  "description": "Ilha dinâmica ultra-leve para Windows com assistente virtual Orbi, olhos OLED que seguem o mouse, voz masculina do Gemini, leitura de tela, busca na web e busca silenciosa em pastas locais.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
